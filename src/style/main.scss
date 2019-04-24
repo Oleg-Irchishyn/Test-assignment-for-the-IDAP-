@@ -1,0 +1,440 @@
+@import "vendor/reset";
+@import "vendor/normalize";
+@import "partials/base";
+@import "partials/navigation";
+@import "partials/header";
+@import "partials/widget";
+@import "partials/widget_right_part";
+@import "partials/messenger_widget";
+
+.dashboard_content {
+	display: flex;
+	max-width: 1580px;
+	margin: 0 auto;
+}
+
+.main {
+	background: $bgColor;
+}
+
+.main__tabs {
+	min-height: 80px;
+	position: relative;
+	background: $bgColorSecond;
+
+	.main__tabs__inner {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.tabs_item_container {
+		display: flex;
+		align-items: center;
+		min-width: 574px;
+	}
+
+	.tabs_item {
+		background: #f1f1f1;
+		position: relative;
+		cursor: pointer;
+		border-right: 1px solid #dcdcdc;
+		border-bottom: 1px solid #dcdcdc;
+		border-top-right-radius: 5px;
+		min-height: 80px;
+
+		img.item_image {
+			margin-left: 30px;
+			margin-top: 20px;
+		}
+
+		span.item_text {
+			font-size: 24px;
+			line-height: normal;
+			font-family: $fontMain;
+			font-weight: 400;
+			vertical-align: top;
+			margin-top: 25px;
+			display: inline-block;
+			margin-left: 10px;
+		}
+
+		.item_number {
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 10px;
+			border-radius: 100%;
+			background: #ff503f;
+			color: #fff;
+			font-family: $fontSecond;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 31.5px;
+			padding: 0px 11px;
+			margin-right: 40px;
+
+			@include web-alias;
+		}
+	}
+}
+
+.tabs_item.messenger_tab {
+	img.item_image {
+		margin-left: 30px;
+		margin-top: 25px;
+	}
+}
+
+.active_tab {
+	background: #fff !important;
+	border-top-right-radius: 0 !important;
+	border-bottom: none !important;
+
+	.item_number {
+		background: #adadad !important;
+	}
+}
+
+.main__tabs .tabs_message {
+	position: relative;
+	text-align: right;
+	padding-right: 75px;
+	background: $bgColorSecond;
+	margin-left: 430px;
+
+	.editable_message {
+		font-family: $fontMain;
+		font-size: 22px;
+		line-height: normal;
+		color: #c1c1c1;
+		opacity: 0.7;
+		display: inline-block;
+		padding-top: 25px;
+		position: relative;
+		min-width: 260px;
+	}
+}
+
+.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+	content: attr(placeholder);
+	color: #c1c1c1;
+	font-family: $fontMain;
+	line-height: normal;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.main__tabs .tabs_message .editable_message[placeholder]:empty:focus:before {
+	content: "";
+}
+
+/* MEDIA QUERIES */
+
+// 0 - 576 QUERY FOR EXTRA SMALL DEVICES
+
+@media screen and (max-width: 576px) {
+	.dashboard_content {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.main__tabs__inner {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.tabs_item_container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			min-width: initial;
+			width: 100%;
+		}
+
+		.tabs_item {
+			text-align: center;
+			width: 100%;
+
+			i.item_image {
+				margin-left: 30px;
+			}
+
+			span.item_text {
+				font-size: 22px;
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		text-align: center;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin: 0;
+
+		.editable_message {
+			font-family: $fontMain;
+			font-size: 20px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		font-size: 20px;
+	}
+}
+
+// 577 - 768 QUERY FOR SMALL DEVICES
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+	.dashboard_content {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.main__tabs__inner {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.tabs_item_container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			min-width: initial;
+		}
+
+		.tabs_item {
+			width: 100%;
+			text-align: center;
+
+			i.item_image {
+				margin-left: 30px;
+			}
+
+			span.item_text {
+				font-size: 22px;
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		text-align: center;
+		padding-left: 0px;
+		padding-right: 0px;
+		margin: 0;
+
+		.editable_message {
+			font-family: $fontMain;
+			font-size: 20px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		font-size: 20px;
+	}
+}
+
+// 769 - 992 QUERY FOR MEDIUM DEVICES
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+	.dashboard_content {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.main__tabs__inner {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.tabs_item_container {
+			display: flex;
+			align-items: center;
+			min-width: initial;
+			flex-wrap: nowrap;
+		}
+
+		.tabs_item {
+			max-width: 100%;
+
+			span.item_text {
+				font-size: 22px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		text-align: center;
+		padding-right: 0;
+		margin: 0;
+		width: 25%;
+
+		.editable_message {
+			font-size: 20px;
+			min-width: initial;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		margin-left: 5px;
+		font-size: 20px;
+	}
+}
+
+// 993 - 1200 QUERY FOR LARGE DEVICES
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+	.dashboard_content {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.main__tabs__inner {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.tabs_item_container {
+			display: flex;
+			align-items: center;
+			min-width: initial;
+			flex-wrap: nowrap;
+		}
+
+		.tabs_item {
+			span.item_text {
+				font-size: 22px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		text-align: center;
+		padding-right: 0;
+		margin: 0;
+		width: 25%;
+
+		.editable_message {
+			font-size: 20px;
+			min-width: initial;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		margin-left: 5px;
+		font-size: 20px;
+	}
+}
+
+// 1200 - 1439 QUERY FOR EXTRA LARGE DEVICES
+
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+	.dashboard_content {
+		display: flex;
+		max-width: 1150px;
+		width: 1150px;
+		margin: 0 auto;
+	}
+
+	.main {
+		background: $bgColor;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.tabs_item {
+			span.item_text {
+				font-size: 20px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		padding-right: 45px;
+		margin: 0;
+
+		.editable_message {
+			font-size: 20px;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		font-size: 20px;
+	}
+}
+
+// 1440 - 1600 QUERY FOR EXTRA LARGE DEVICES
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+	.dashboard_content {
+		display: flex;
+		max-width: 1400px;
+		width: 1400px;
+		margin: 0 auto;
+	}
+
+	.main {
+		background: $bgColor;
+	}
+
+	.main__tabs {
+		min-height: 80px;
+		position: relative;
+
+		.tabs_item {
+			span.item_text {
+				font-size: 20px;
+			}
+		}
+	}
+
+	.main__tabs .tabs_message {
+		flex-grow: 1;
+		padding-right: 25px;
+		margin: 0;
+
+		.editable_message {
+			font-size: 20px;
+		}
+	}
+
+	.main__tabs .tabs_message .editable_message[placeholder]:empty:before {
+		font-size: 20px;
+	}
+}

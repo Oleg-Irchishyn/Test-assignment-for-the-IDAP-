@@ -1,0 +1,72 @@
+﻿.messenger_widget {
+	position: relative;
+	min-height: 952px;
+	display: none;
+
+	.messenger_message {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: $fontMain;
+		color: $textColor;
+		font-size: 22px;
+		line-height: normal;
+	}
+}
+
+/* MEDIA QUERIES */
+
+// 0 - 576 QUERY FOR EXTRA SMALL DEVICES
+
+@media screen and (max-width: 576px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 300px;
+	}
+}
+
+// 577 - 768 QUERY FOR SMALL DEVICES
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 300px;
+	}
+}
+
+// 769 - 992 QUERY FOR MEDIUM DEVICES
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 300px;
+	}
+}
+
+// 993 - 1200 QUERY FOR LARGE DEVICES
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 300px;
+	}
+}
+
+// 1200 - 1439 QUERY FOR EXTRA LARGE DEVICES
+
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 500px;
+	}
+}
+
+// 1440 - 1600 QUERY FOR EXTRA LARGE DEVICES
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+	.messenger_widget {
+		position: relative;
+		min-height: 500px;
+	}
+}

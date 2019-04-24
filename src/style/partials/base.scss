@@ -1,0 +1,103 @@
+// fonts
+
+@font-face {
+	font-family: "Proxima";
+	src: url("../fonts/ProximaNova/ProximaNova-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Proxima-Bold";
+	src: url("../fonts/ProximaNova/ProximaNova-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "HelveticaNeue";
+	src: url("../fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "HelveticaNeueBold";
+	src: url("../fonts/HelveticaNeue/HelveticaNeueBold.ttf") format("truetype");
+}
+
+$fontMain: "Proxima", sans-serif;
+$fontMainbold: "Proxima-Bold", sans-serif;
+$fontSecond: "HelveticaNeue", sans-serif;
+$fontSecondbold: "HelveticaNeueBold", sans-serif;
+
+// colors
+
+$bgColor: #fff;
+$bgColorSecond: #f1f1f1;
+
+$textColor: #4b4b4b;
+
+$btnMain: #F1C91A;
+$btnMainHover: #c8a30d;
+$btnSecond: #38393D;
+$btnSecondHover: #07080D;
+
+// mixins
+
+@mixin web-alias { // text smoothness hack
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Classes
+
+body {
+	font-family: $fontMain, $fontSecond, $fontSecondbold, sans-serif;
+	background-color: $bgColorSecond;
+	color: $textColor;
+	overflow-x: hidden;
+}
+
+@media screen and (min-width: 1440px) {
+	.container {
+		min-width: 1440px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.container {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+	.container {
+		max-width: 1020px;
+	}
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+	.container {
+		max-width: 1310px;
+		min-width: initial;
+	}
+}
+
+.container {
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+}
+
+// scrollbar
+
+div::-webkit-scrollbar {
+	width: 5px;
+}
+
+div::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background: #d6d8da;
+}
+
+div::-webkit-scrollbar-thumb {
+	background-color: #d6d8da;
+	border-radius: 10px;
+	height: 30px;
+}

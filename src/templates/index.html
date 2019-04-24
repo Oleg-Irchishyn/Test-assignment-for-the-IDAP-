@@ -1,0 +1,113 @@
+{% set pageTitle = "Dashboard" %}
+{% include "partials/head.html" %}
+<body>
+<div class="dashboard_content">
+ <aside class="nav">
+ <div class="nav__inner">
+  <ul class="nav_listing">
+   <li class="listing_item avatar_item">
+    <div class="preview">
+     <img src="img/content/nav_avatar.png" width="96" height="96" alt="avatar icon">
+     <span class="number">
+      2
+     </span>
+     <span class="more">
+      &#8230
+     </span>
+    </div>
+   </li>
+   <li class="listing_item board_item active_listing_item clickable_listing_item">
+    <div class="preview">
+     <img src="img/content/Board_ICON.png" width="45" height="45" alt="board icon">
+     <span class="text">
+     Board
+     </span>
+      <span class="more">
+      &#8230
+     </span>
+    </div>
+   </li>
+   <li class="listing_item projects_item clickable_listing_item">
+     <div class="preview">
+      <img src="img/content/projects_icon.png" width="33" height="27" alt="projects icon">
+      <span class="text">
+       Projects
+      </span>
+      <span class="number">
+       9
+     </span>
+      <span class="more">
+       &#8230
+     </span>
+    </div>
+   </li>
+   <li class="listing_item settings_item clickable_listing_item">
+     <div class="preview">
+     <img src="img/content/settings_icon.png" width="42" height="42" alt="settings icon">
+     <span class="text">
+     Settings
+     </span>
+    </div>
+   </li>
+    <li class="listing_item upgrade_item clickable_listing_item">
+    <div class="preview">
+     <img src="img/content/upgrade_icon.png" width="44" height="46" alt="upgrade icon">
+     <span class="number">
+      3
+     </span>
+     <span class="text">
+      Upgrade
+     </span>
+      <span class="more">
+       &#8230
+     </span>
+    </div>
+   </li>
+    <li class="listing_item logout_item">
+    <div class="preview">
+     <img src="img/content/logout_icon.png" width="44" height="44" alt="logout icon">
+     <span class="text">
+     Logout
+     </span>
+    </div>
+   </li>
+  </ul>
+ </div>
+</aside>
+
+<div class="main">
+ <div class="container">
+ {% include "partials/header.html" %}
+   <div class="main__tabs">
+   <div class="main__tabs__inner">
+    <div class="tabs_item_container active_projects_tab">
+     <div class="tabs_item active_tab" id="active_projects">
+      <img class="item_image" src="img/content/clock_icon.png" width="40" height="40" alt="clock_icon">
+      <span class="item_text">
+       Active Projects
+      </span>
+      <span class="item_number">
+       9
+      </span>
+     </div>
+      <div class="tabs_item messenger_tab">
+     <img class="item_image" src="img/content/telegram_icon.png" width="45" height="27" alt="telegram_icon">
+      <span class="item_text">
+       Messenger
+      </span>
+      <span class="item_number">
+       2
+      </span>
+     </div>
+    </div>
+    <div class="tabs_message">
+     <span class="editable_message" onkeypress="return (this.innerText.length <= 20)" placeholder="Search Project, User, Task, etc..." contenteditable="true"></span>
+    </div>
+   </div>
+  </div>
+ </div>
+ {% include "partials/widget.html" %}
+ {% include "partials/messenger-widget.html" %}
+ </div>
+</div>
+{% include "partials/page-end.html" %}
